@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" width="device-width initial-scale=1.0">
+        <title>Woof&Bow</title>
+    </head>
+    <style>
+        body{
+            height: 100%;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        .cover{
+            height: 93vh;
+            margin: 0;
+            margin-bottom: 50px;
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 180% 180%;animation: gradient-animation 18s ease infinite;
+        }
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .head-content{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 128px;
+            
+        }
+        .left-content{
+            padding: 1px;
+            width: 440px;
+            text-align: left;
+            margin-top: 250px;
+            margin-left: 22%;
+        }
+        .left-content h1{
+            font-size: 3rem;
+            line-height: 1.0;
+            margin: 15px;
+            margin-left: 0;
+        }
+        .left-content .button{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 420px;
+            justify-content: flex-start;
+        }
+        .left-content .btns{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 4px;
+            font-weight: 400;
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            height: 45px;
+            border-radius: 10px;
+            width: 160px;
+            border: 2px lightgrey solid;
+            text-decoration: none;
+            color: black;
+        }
+        .left-content a:hover{
+            background-color: lightseagreen;
+        }
+        .left-content .applebtns{
+            background-color: #f8f9fa;
+        }
+        .left-content .googlebtns{
+            background-color: transparent;
+            border: 2px solid lightgray;
+        }
+        .button img{
+            height: 20px;
+            width: 20px;
+            margin: 0;
+            margin-left: 18px;
+            padding: 0;
+        }
+        .right-content{
+            padding-bottom: 0;
+            margin-top: 6.5%;
+            display: flex;
+        }
+        .right-content img{
+            padding: 0;
+            margin: 0;
+        }
+        .feature{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-evenly;
+            margin-bottom: 60px;
+        }
+        .left-card, .mid-card, .right-card{
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+            height: 200px;
+        }
+        .feature-img{
+            width: 50px;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-img img{
+            height: 30px;
+            width: 30px;
+            padding: 0;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+        .feature-content h2{
+            margin-bottom: 5px;
+            font-size: 1.8rem;
+        }
+        .feature-content p{
+            margin-top: 0;
+            font-size: 1.0 rem;
+        }
+        .testimonial{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 450px;
+            margin-bottom: 60px;
+        }
+        .testimonial-content{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            text-align: center;
+        }
+        .testimony-img img{
+            height: 150px;
+            width: 150px;
+            border-radius: 80px;
+        }
+        .testimonial-content p{
+            margin-top: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 0;
+        }
+        .testimony-img p{
+            margin-top: 5px;
+            font-size: 1.4rem;
+            font-weight: lighter;
+        }
+        .brand-img{
+            display: flex;
+            flex-direction: row;
+            gap: 240px;
+            margin-top: 20px;
+        }
+        .brand{
+            height: 30px;
+            width: 100px;
+        }
+        .pricing-content{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .pricing-content h1{
+            font-size: 4rem;
+            font-weight: 400;
+            margin: 0;
+            padding: 0
+        }
+        .pricing-content p{
+            font-size: 1.2rem;
+            padding: 0;
+            margin:0;
+        }
+        .price-plan{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+        .plan{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            border: 2px solid lightgrey;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .premium{
+            border: 1px solid black !important;
+            border-radius: 10px;
+        }
+        .plan h2{
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .plan .h2{
+            border-bottom: 1px solid black;
+            height: 70px;
+            background-color: #e9ecef;
+            border-top-left-radius : 7px;
+            border-top-right-radius: 7px;
+            margin-bottom: 18px;
+        }
+        .plan .h2-mastiff{
+            border-bottom: 1px solid black;
+            height: 70px;
+            background-color: #212529;
+            color: white;
+            border-top-left-radius : 7px;
+            border-top-right-radius: 7px;
+            margin-bottom: 18px;
+        }
+        .plan p{
+            font-size: 2.0rem;
+            font-weight: 400;
+            color: #212529BF;
+            margin-bottom: 0;
+            padding: 0;
+        }
+        .mainprice{
+            color: black;
+            font-weight: 500;
+        }
+        .plan ul{
+            margin-bottom: 20px;
+        }
+        .plan li{
+            list-style-type: none;
+            margin-right: 30px;
+            font-size: 1.1rem;
+        }
+        .button{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .button a{
+            border: 1px solid black;
+            width: 85%;
+            height: 50px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: black;
+        }
+        .button .base:hover{
+            background-color: #212529;
+            color: white;
+        }
+        .button > .mid{
+            background-color: #212529;
+            color: white;
+        }
+        .button > .high{
+            background-color: #212529;
+            color: white;
+        }
+        .mid:hover, .high:hover{
+            opacity: 0.9;
+        }
+        .footer{
+            padding: 0;
+            margin: 0;
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 180% 180%;animation: gradient-animation 18s ease infinite;
+        }
+        .footer-content{
+            display: flex;
+        }
+        .copyright{
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 16px;
+        }
+        .copyright p:hover{
+            background-color: black;
+        }
+        .list{
+            width: 100%;
+        }
+        .list ul{
+            float: right;
+            padding: 20px;
+        }
+        .list li{
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 40px;
+        }
+        .list li a{
+            text-decoration: none;
+            color: white;
+        }
+        .list li a:hover{
+            background-color: black;
+        }
+        @media (max-width: 1400px) {
+            .cover{
+                height: 95vh;
+            }
+            .head-content{
+                height: 100%;
+                gap: 100px
+            }
+            .left-content{
+                margin-left: 12%;
+            }
+            .brand-img{
+                gap: 150px;
+            }
+        }
+        @media (max-width: 1000px) {
+            .cover{
+                height: 100vh;
+            }
+            .head-content{
+                gap: 80px;
+            }
+            .left-content{
+                margin-left: 5%;
+            }
+            .brand-img{
+                gap: 120px;
+            }
+        }
+        @media (max-width: 992px) {
+            .head-content{
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                height: 100%;
+                gap: 50px;
+            }
+            .left-content{
+                margin-top: 30px;
+                padding: 0;
+                width: 100%;
+                text-align: center;
+                align-items: center;
+            }
+            .left-content h1{
+                font-size: 2.5rem;
+            }
+            .left-content .button{
+                width: 100%;
+                justify-content: center;
+                margin-top: 30px;
+            }
+            .left-content .btns{
+                height: 70px;
+                width: 180px;
+            }
+            .right-content{
+                border-bottom: 1px solid white;
+                margin-top: 123px;
+            }
+            .right-content img{
+                height: 800px;
+            }
+            .feature{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            .left-card, .mid-card, .right-card{
+                width: 65%;
+            }
+            .feature-img{
+                width: 70px;
+                margin-right: 10px;
+            }
+            .feature-img img{
+                height: 40px;
+                width: 40px;
+                margin-top: 60px;
+            }
+            .feature-content h2{
+                font-size: 3rem;
+            }
+            .feature-content p{
+                font-size: 2rem;
+            }
+            .brand-img{
+                gap: 130px;
+            }
+            .pricing-content p{
+                font-size: 1.8rem;
+            }
+            .price-plan{
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+            .plan{
+                width: 500px;
+            }
+            .plan h2{
+                font-size: 2rem;
+                margin: 0;
+                margin-top: 12px;
+            }
+            .plan li{
+                font-size: 1.5rem;
+            }
+            .button a{
+                font-size: 25px;
+                margin-bottom: 5px;
+            }
+            .list li{
+                display:block
+            }
+        }
+    </style>
+    <body>
+        <header class="cover">
+            <div class="head-content">
+                <div class="left-content">
+                    <h1>Find new and interesting Partner for your Dog.</h1>
+                    <div class="button">
+                        <a href="#" class="btns applebtns"><img src="./apple-logo-png-dallas-shootings-don-add-are-speech-zones-used-4.png" alt="apple logo">Download</a>
+                        <a href="#" class="btns googlebtns"><img src="./png-white-google-play-playstore-logo-symbol-icon-11639742441dhglfjnad1-removebg-preview.png" alt="google play store logo"> Download</a>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img class="cover-photo" src="./iphone.png" class="dog picture in iphone">
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="feature">
+                <div class="left-card">
+                    <div class="feature-img">
+                        <img src="./check2-circle.svg" alt="check in circle">
+                    </div>
+                    <div class="feature-content">
+                        <h2>Easy to Use</h2>
+                        <p class="feature-para">So easy to use, even your dog could do it.</p>
+                    </div>
+                </div>
+                <div class="mid-card">
+                    <div class="feature-img">
+                        <img src="./mortarboard.svg" alt="Scholar hat">
+                    </div>
+                    <div class="feature-content">
+                        <h2>Elite Clientele</h2>
+                        <p class="feature-para">We have all the dogs, the greatest dogs.</p>
+                    </div>
+                </div>
+                <div class="right-card">
+                    <div class="feature-img three">
+                        <img src="./arrow-through-heart.svg" alt="arrow through heart">
+                    </div>
+                    <div class="feature-content">
+                        <h2>Guaranteed to work</h2>
+                        <p class="feature-para">Find the love of your dog's life or your money back.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"I no longer have to sniff other dogs for love. I've found the hottest Corgi on Woof&Bow."</p>
+                    <div class="testimony-img">
+                        <img src="./dog-img.jpg" alt="dog picture"/>
+                        <p>Pebbles, New York</p>
+                    </div>
+                </div>
+                <div class="brand-img">
+                    <img class="brand" src="./techcrunch.png" alt="techcrunch"/>
+                    <img class="brand" src="./mashable.png" alt="mashable"/>
+                    <img class="brand" src="./bizinsider.png" alt="business insider"/>
+                    <img class="brand" src="./tnw.png" alt="tnw"/>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="pricing-content">
+                <h1>A Plan for Every Dog's Needs</h1>
+                <p>Simple and affordable price plans for you and your dog.</p>
+                <div class="price-plan">
+                    <div class="basic plan">
+                        <div class="h2">
+                            <h2>Basic</h2>
+                        </div>
+                        <p><span class="mainprice">$0</span>/mo</p>
+                        <ul>
+                            <li>5 Matches Per Day</li>
+                            <li>10 Messages Per Day</li>
+                            <li>Unlimited App Usage</li>
+                        </ul>
+                        <div class="button"><a class="btn base" href="#">Sign up for free</a></div>
+                    </div>
+                    <div class="affordable plan">
+                        <div class="h2">
+                            <h2>Super</h2>
+                        </div>
+                        <p><span class="mainprice">$15</span>/mo</p>
+                        <ul>
+                           <li>Unlimited Matches</li>
+                           <li>Unlimited Messages</li>
+                           <li>Unlimited App Usage</li>
+                        </ul>
+                        <div class="button"><a class="btn mid" href="#">Get Started</a></div>
+                    </div>
+                    <div class="premium plan">
+                        <div class="h2-mastiff">
+                            <h2>Premium</h2>
+                        </div>
+                        <p><span class="mainprice">$29</span>/mo</p>
+                        <ul>
+                            <li>Pirority Listing</li>
+                            <li class="text">Unlimited Matches & Messages</li>
+                            <li>Unlimited App Usage</li>
+                        </ul>
+                        <div class="button"><a class="btn high" href="#">Contact us</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="copyright"><p>© Woof&Bow</p></div>
+                    <div class="list">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                </div>
+            </footer>
+        </section>
+    </body>
+</html>
